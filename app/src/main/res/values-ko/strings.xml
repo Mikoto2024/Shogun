@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="you_do_not_have_an_account_yet_create_one_here">아직 계정이 없습니까? 여기에서 하나 만드세요</string>
+    <string name="generate_id">일반 식별</string>
+    <string name="app_name">Shogun</string>
+    <string name="information">정보</string>
+    <string name="enter_your_userid">아이디를 입력하세요</string>
+    <string name="enter_your_password">비밀번호를 입력하세요</string>
+    <string name="enter_your_userid_rg">아이디를 입력하세요</string>
+    <string name="enter_your_password_rg">비밀번호를 입력하세요</string>
+    <string name="confirm_your_password_rg">암호를 확인</string>
+    <string name="create_account_rg">계정 만들기</string>
+    <string name="verify">확인하다</string>
+    <string name="login">로그인</string>
+    <string name="accept">수용하다</string>
+    <string name="refuse">감소</string>
+    <string name="update_history">업데이트 기록</string>
+</resources>

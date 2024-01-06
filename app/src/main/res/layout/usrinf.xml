@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Usinf"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="8dp"
+    android:paddingTop="6dp"
+    android:paddingEnd="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="User information"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/i1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="UserID :"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/i2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="Password :"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/i3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="Code :"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/i5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="Account status :"
+            tools:ignore="TextSizeCheck" />
+
+        <EditText
+            android:id="@+id/getcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#000000"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Enter the code to redeem"
+            android:imeOptions="flagNoFullscreen"
+            android:inputType="text"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#B3FFFFFF"
+            android:maxLength="15"/>
+
+        <Button
+            android:id="@+id/btncd"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="Redeem" />
+    </LinearLayout>
+
+</LinearLayout>

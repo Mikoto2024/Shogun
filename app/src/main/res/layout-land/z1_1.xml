@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/c1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/btnrg"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:shadowColor="@color/Blue2"
+            android:text="@string/you_do_not_have_an_account_yet_create_one_here"
+            android:textColor="@color/white" />
+    </FrameLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/InputLayout"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="#4D000000"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.203"
+        style="@style/CustomInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtUserID"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:drawableStart="@drawable/cs_person"
+            android:drawablePadding="14dp"
+            android:hint="@string/enter_your_userid"
+            android:imeOptions="flagNoFullscreen"
+            android:inputType="number"
+            android:maxLength="8"
+            android:shadowColor="#137AEF"
+            android:textColor="#99FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/InputLayout2"
+        style="@style/CustomInputLayout"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="#4D000000"
+        app:counterEnabled="true"
+        app:counterMaxLength="24"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+        app:layout_constraintVertical_bias="0.025">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:drawableStart="@drawable/cs_lock"
+            android:drawablePadding="14dp"
+            android:hint="@string/enter_your_password"
+            android:imeOptions="flagNoFullscreen"
+            android:inputType="textCapWords"
+            android:maxLength="24"
+            android:shadowColor="#137AEF"
+            android:textColor="#99FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/lg"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bk_button"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayout2"
+        app:layout_constraintVertical_bias="0.213" />
+
+    <FrameLayout
+        android:id="@+id/inf"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lg"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:shadowColor="@color/Blue2"
+            android:text="@string/information"
+            android:textColor="@color/white" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

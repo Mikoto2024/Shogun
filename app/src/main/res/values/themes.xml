@@ -1,0 +1,93 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Shogun" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:shadowColor">#137AEF</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">5</item>
+        <item name="android:shadowRadius">10</item>
+        <!-- TextView. -->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize" tools:ignore="SpUsage">11dp</item>
+        <item name="fontFamily">@font/miui</item>
+        <item name="android:fontFamily">@font/miui</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/teal_200</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="windowSplashScreenAnimationDuration">2000</item>
+        <item name="postSplashScreenTheme">@style/Theme.Shogun</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize" tools:ignore="SpUsage">11dp</item>
+    </style>
+
+    <style name="Custom.Button" parent="ShapeAppearanceOverlay.Material3.Button">
+        <item name="android:textSize" tools:igonre="SpUsage">12dp</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.Material3.Light.Dialog.Alert">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/teal_200</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:gravity">left</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
+
+    <style name="CustomInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColorHint">#CCFFFFFF</item>
+        <item name="boxStrokeColor">#99FFFFFF</item>
+
+        <item name="hintTextColor">@color/white2</item>
+        <item name="counterTextColor">@color/white2</item>
+
+        <item name="hintTextAppearance">@style/TextLabel</item>
+        <item name="counterTextAppearance">@style/TextLabel</item>
+    </style>
+
+    <style name="GreenShadowTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">#00FF00</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">5</item>
+        <item name="android:shadowRadius">10</item>
+    </style>
+
+    <style name="BlueShadowTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/Blue</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">5</item>
+        <item name="android:shadowRadius">10</item>
+    </style>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="358dp"
+    android:layout_height="400dp"
+    android:layout_gravity="end"
+    android:background="@drawable/bk_black"
+    android:orientation="vertical"
+    android:theme="@style/Theme.Shogun">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/sp_cl"
+            android:layout_width="match_parent"
+            android:layout_height="38dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:gravity="center"
+                    android:text="Shogun Svip [V1.0]" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:shadowColor="@color/Green"
+                    android:text="Expiration Date : 21/12/2024 : 00:00:00"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/Tab"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#00000000"
+            app:tabIndicatorColor="#D2E7FF"
+            app:tabTextAppearance="@style/Theme.Shogun">
+
+        </com.google.android.material.tabs.TabLayout>
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/sp0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"></androidx.viewpager2.widget.ViewPager2>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

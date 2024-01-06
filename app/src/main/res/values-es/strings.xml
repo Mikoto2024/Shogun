@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="you_do_not_have_an_account_yet_create_one_here">¿Aún no tienes una cuenta? Crea una aqui</string>
+    <string name="generate_id">Generar ID</string>
+    <string name="app_name">Shogun</string>
+    <string name="information">Información</string>
+    <string name="enter_your_userid">Ingrese su ID de usuario</string>
+    <string name="enter_your_password">Ingrese su contraseña</string>
+    <string name="enter_your_userid_rg">Ingrese su ID de usuario</string>
+    <string name="enter_your_password_rg">Ingrese su contraseña</string>
+    <string name="confirm_your_password_rg">Confirme su contraseña</string>
+    <string name="create_account_rg">Crear Cuenta</string>
+    <string name="verify">Verify</string>
+    <string name="login">Login</string>
+    <string name="accept">Aceptar</string>
+    <string name="refuse">Rechazar</string>
+    <string name="update_history">Historial de actualizaciones</string>
+</resources>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarSize="4dp"
+    android:scrollbarThumbVertical="@color/black"
+    android:theme="@style/Theme.Shogun">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:gravity="center|start"
+                android:shadowColor="@color/Blue"
+                android:text="Esp :" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/a0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Esp Players"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Dead Player"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/pb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Player Box"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Sleeping Player"
+                    android:textColor="@color/white"
+                    android:typeface="normal" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="center|start"
+                android:shadowColor="@color/Blue"
+                android:text="PvP Settings :" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Self Pointed :" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/a1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="--Activate"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/track"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="--BulletTracking"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:id="@+id/rdgroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/none"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/black"
+                        android:text="None"
+                        android:textColor="@color/white" />
+
+                    <RadioButton
+                        android:id="@+id/hd"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/black"
+                        android:text="Head"
+                        android:textColor="@color/white" />
+
+                    <RadioButton
+                        android:id="@+id/ct"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/black"
+                        android:text="Chest"
+                        android:textColor="@color/white" />
+
+                    <RadioButton
+                        android:id="@+id/ls"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/black"
+                        android:text="Legs"
+                        android:textColor="@color/white" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:shadowColor="@color/Blue"
+                    android:text="---- Aim Pov ---- :" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/a2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="--Activate"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hc0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="0" />
+
+                <SeekBar
+                    android:id="@+id/apov"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:max="100"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="6dp"
+                    android:progressDrawable="@drawable/sk"
+                    android:thumb="@drawable/th" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/b"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="start|center"
+                android:text="Speed Global :" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/hc1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="0" />
+
+                <SeekBar
+                    android:id="@+id/sksg"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:max="1000"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="6dp"
+                    android:progressDrawable="@drawable/sk"
+                    android:thumb="@drawable/th" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="start|center"
+                android:text="Speed Player :" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/hc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="0" />
+
+                <SeekBar
+                    android:id="@+id/sksp"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:max="1000"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="6dp"
+                    android:progressDrawable="@drawable/sk"
+                    android:thumb="@drawable/th" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="start|center"
+                android:text="Big Head :" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/hc3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="0" />
+
+                <SeekBar
+                    android:id="@+id/skbh"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:max="20"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="6dp"
+                    android:progressDrawable="@drawable/sk"
+                    android:thumb="@drawable/th" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/ant"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Antenna"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/be"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="--Block Enemy"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/nr"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="No Recoil"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/unst"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Underwater shot"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="start|center"
+                android:text="Night Vision :" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/hc4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="0" />
+
+                <SeekBar
+                    android:id="@+id/sknv"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:max="40"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="6dp"
+                    android:progressDrawable="@drawable/sk"
+                    android:thumb="@drawable/th" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="start|center"
+                android:text="Pov :" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/hc5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="0" />
+
+                <SeekBar
+                    android:id="@+id/skpv"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:max="120"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="6dp"
+                    android:progressDrawable="@drawable/sk"
+                    android:thumb="@drawable/th" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="start|center"
+                android:text="Wide View :" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/hc6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="0" />
+
+                <SeekBar
+                    android:id="@+id/skwv"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:max="120"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="6dp"
+                    android:progressDrawable="@drawable/sk"
+                    android:thumb="@drawable/th" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

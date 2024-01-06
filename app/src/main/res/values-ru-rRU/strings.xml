@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shogun</string>
+    <string name="information">информация</string>
+    <string name="enter_your_userid">Введите свой идентификатор пользователя</string>
+    <string name="enter_your_password">Введите ваш пароль</string>
+    <string name="you_do_not_have_an_account_yet_create_one_here">У вас еще нет аккаунта? создай здесь</string>
+    <string name="generate_id">Generate ID</string>
+    <string name="enter_your_userid_rg">Введите свой идентификатор пользователя</string>
+    <string name="enter_your_password_rg">Введите ваш пароль</string>
+    <string name="confirm_your_password_rg">Подтвердите ваш пароль</string>
+    <string name="create_account_rg">Зарегистрироваться</string>
+    <string name="verify">проверять</string>
+    <string name="login">Авторизоваться</string>
+    <string name="accept">Принимать</string>
+    <string name="refuse">Отклонить</string>
+    <string name="update_history">История обновлений</string>
+</resources>

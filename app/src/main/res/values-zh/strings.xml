@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shogun</string>
+    <string name="information">信息</string>
+    <string name="enter_your_userid">輸入您的用戶名</string>
+    <string name="enter_your_password">輸入您的密碼</string>
+    <string name="you_do_not_have_an_account_yet_create_one_here">您還沒有帳戶嗎？, 在這裡創建一個帳戶</string>
+    <string name="generate_id">生成ID</string>
+    <string name="enter_your_userid_rg">輸入您的用戶名</string>
+    <string name="enter_your_password_rg">輸入您的密碼</string>
+    <string name="confirm_your_password_rg">確認你的密碼</string>
+    <string name="create_account_rg">創建賬戶</string>
+    <string name="verify">核實</string>
+    <string name="login">登錄</string>
+    <string name="accept">接受</string>
+    <string name="refuse">衰退</string>
+    <string name="update_history">更新歷史</string>
+</resources>

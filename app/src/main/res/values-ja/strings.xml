@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shogun</string>
+    <string name="information">情報</string>
+    <string name="enter_your_userid">IDを入力してください</string>
+    <string name="enter_your_password">パスワードを入力してください</string>
+    <string name="you_do_not_have_an_account_yet_create_one_here">まだアカウントを持っていませんか？ここで作成します</string>
+    <string name="generate_id">ID の生成</string>
+    <string name="enter_your_userid_rg">IDを入力してください</string>
+    <string name="enter_your_password_rg">パスワードを入力してください</string>
+    <string name="confirm_your_password_rg">あなたのパスワードを確認</string>
+    <string name="create_account_rg">アカウントを作成する</string>
+    <string name="verify">確認</string>
+    <string name="login">ログイン</string>
+    <string name="accept">受け入れる</string>
+    <string name="refuse">却下</string>
+    <string name="update_history">更新履歴</string>
+</resources>

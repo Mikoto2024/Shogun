@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
+    android:background="@drawable/bk_black"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:theme="@style/Theme.Shogun">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:gravity="center"
+        android:shadowColor="@color/Blue"
+        android:text="Dupe Menu [ Svip ]" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
