@@ -56,7 +56,7 @@ class z1_0 : Fragment() {
         for ((index, item) in listNovedades.withIndex()) {
             stringBuilder.append("${index + 1}- $item\n")
         }
-        addView(requireContext(), "Stable", "0.1", "28/6/2023", stringBuilder.toString())
+        addView(requireContext(), "Beta", "0.1", "06/7/2023", stringBuilder.toString())
     }
 
     private fun addView(

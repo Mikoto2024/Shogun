@@ -8,9 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.lolideveloper.shogun.Ui.ViewModel.Fragment.InfAppViewModel
 import com.lolideveloper.shogun.Utils.Util.Companion.mToast
 import com.lolideveloper.shogun.databinding.InfappBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class InfApp : Fragment() {
     private var _binding: InfappBinding? = null
@@ -36,10 +40,14 @@ class InfApp : Fragment() {
     }
 
     private fun initText() {
-        binding.txt1.setText(viewModel.getDevicefeatures(requireContext()))
-        binding.textView7.setText("System Requirements :")
-        binding.txt2.setText(viewModel.getStrings(requireContext(), 0))
-        binding.txt3.setText(viewModel.getStrings(requireContext(), 1))
+        lifecycleScope.launch(Dispatchers.IO) {
+            withContext(Dispatchers.Main) {
+                binding.txt1.setText(viewModel.getDevicefeatures(requireContext()))
+            }
+            binding.textView7.setText("System Requirements :")
+            binding.txt2.setText(viewModel.getStrings(requireContext(), 0))
+            binding.txt3.setText(viewModel.getStrings(requireContext(), 1))
+        }
     }
 
     private fun initListeners() {

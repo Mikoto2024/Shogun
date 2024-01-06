@@ -8,18 +8,5 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserInfViewModel  @Inject constructor(private val firebaseResponse: FirebaseResponse): ViewModel() {
-
-    private val _code  = MutableLiveData<CharSequence>()
-    val code = _code
-    fun onResponse() : FirebaseResponse{
-        return firebaseResponse
-    }
-    fun getCharSequence(i : CharSequence){
-        _code.value = i
-    }
-
-
-    fun checkButtonState() : Boolean{
-        return _code.value != null && _code.value!!.length == 15
-    }
+    val onResponse = firebaseResponse
 }

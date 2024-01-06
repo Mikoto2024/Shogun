@@ -68,7 +68,8 @@ class z1_2 @Inject constructor() : Fragment() {
                 requireContext(),
                 mUserID.userid,
                 mUserID.password,
-                binding.edtCode.text.toString())
+                binding.edtCode.text.toString()
+            )
         }
     }
 

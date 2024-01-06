@@ -30,7 +30,6 @@ class FirebaseResponse @Inject constructor(
     /* Login , Register , Verify Code ( Z1_1 , D1 ,D2 ) */
     fun initLogin(context: Context, userID: String, password: String, check: (Boolean) -> Unit) {
         mUserID = UserID(userID, password, "", "")
-
         firebase.db.collection("Users").document(mUserID.userid).get().addOnSuccessListener {
             if (!it.exists()) {
                 mToast(context, 0, "No exists")
@@ -52,15 +51,29 @@ class FirebaseResponse @Inject constructor(
         }
     }
 
-    fun initRegister(context: Context, userID: String, password: String) {
-        mUserID = UserID(userID, password, "", "")
-        onCheckAndroidID(context) { bool ->
-            if (bool) {
-                onRegister(context)
+    /* Load Data UserID , Passowrd , Code ( Z1_1 , D2 - UserInf ) */
+    @SuppressLint("SetTextI18n")
+    fun initLoadData(context: Context, userid: TextView, password: TextView, code: TextView) {
+        val AndroidID = Secure.getString(context.contentResolver, Secure.ANDROID_ID)
+        firebase.db.collection("ID").document(AndroidID).addSnapshotListener { value, error ->
+            if (value == null) {
+                userid.text = "null"
+                password.text = "null"
+                code.text = "null"
             } else {
-                mToast(context, 0, "Device already registered")
+                mInf = Inf(
+                    value.getString("UserID").toString(),
+                    value.getString("Password").toString(),
+                    value.getString("Code").toString()
+                )
+                userid.text = "UserID : " + mInf.userid
+                password.text = "Password :  " + mInf.password
+                code.text = "Code : " + mInf.code
             }
         }
+        userid.setOnClickListener { copy(context, mInf.userid) }
+        password.setOnClickListener { copy(context, mInf.password) }
+        code.setOnClickListener { copy(context, mInf.code) }
     }
 
     fun initVerifyCode(context: Context, userID: String, password: String, code: String) {
@@ -91,32 +104,6 @@ class FirebaseResponse @Inject constructor(
         }
     }
 
-    /* Load Data UserID , Passowrd , Code ( Z1_1 , D2 - UserInf ) */
-    @SuppressLint("SetTextI18n")
-    fun initLoadData(context: Context, userid: TextView, password: TextView, code: TextView) {
-        mInf = Inf("", "", "")
-        val AndroidID = Secure.getString(context.contentResolver, Secure.ANDROID_ID)
-        firebase.db.collection("ID").document(AndroidID).addSnapshotListener { value, error ->
-            if (value == null) {
-                userid.text = "null"
-                password.text = "null"
-                code.text = "null"
-            } else {
-                mInf = Inf(
-                    value.getString("UserID").toString(),
-                    value.getString("Password").toString(),
-                    value.getString("Code").toString()
-                )
-                userid.text = "UserID : " + mInf.userid
-                password.text = "Password :  " + mInf.password
-                code.text = "Code : " + mInf.code
-            }
-        }
-        userid.setOnClickListener { copy(context, mInf.userid) }
-        password.setOnClickListener { copy(context, mInf.password) }
-        code.setOnClickListener { copy(context, mInf.code) }
-    }
-
     /* Check Update ( Update , UpdateView ) */
     fun initUpdate(context: Context) {
         firebase.db.collection("Options").document("Links").get().addOnSuccessListener {
@@ -126,67 +113,6 @@ class FirebaseResponse @Inject constructor(
                 openURL.data = Uri.parse("$getLink")
                 ContextCompat.startActivity(context, openURL, null)
             }
-        }
-    }
-
-    fun redeemCode(context: Context, code: String) {
-        val AndroidID = Secure.getString(context.contentResolver, Secure.ANDROID_ID)
-        onCheckAccount(context) {
-            if (!it) {
-                mToast(context, 0, "Account not created")
-            } else {
-                firebase.db.collection("Codes").document(code).get().addOnSuccessListener {
-                    if (!it.exists()) {
-                        mToast(context, 0, "This code does not exist")
-                    } else {
-                        val getState = it.getBoolean("State")
-                        if (getState == false) {
-                            mToast(context, 0, "Code already redeemed")
-                        } else {
-                            firebase.db.collection("Users").document(mUserID.userid).set(
-                                hashMapOf(
-                                    "ID" to getID(),
-                                    "UserID" to mUserID.userid,
-                                    "Password" to mUserID.password,
-                                    "Code" to code
-                                )
-                            ).addOnSuccessListener {
-                                firebase.db.collection("ID").document(AndroidID).set(
-                                    hashMapOf(
-                                        "AndroidID" to AndroidID,
-                                        "DevideID" to deviceID,
-                                        "UserID" to mUserID.userid,
-                                        "Password" to mUserID.password,
-                                        "Code" to code
-                                    )
-                                ).addOnSuccessListener {
-                                    mToast(context, 0, "Added code : $code")
-                                }
-                                firebase.db.collection("Codes").document(code).set(
-                                    hashMapOf(
-                                        "State" to false
-                                    )
-                                )
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-    }
-
-    private fun onCheckAccount(context: Context, check: (Boolean) -> Unit) {
-        if (::mUserID.isInitialized) {
-            firebase.db.collection("Users").document(mUserID.userid).get().addOnSuccessListener {
-                if (!it.exists()) {
-                    check(false)
-                } else {
-                    check(true)
-                }
-            }
-        } else {
-            mToast(context, 0, "Login before redeeming a code")
         }
     }
 
@@ -205,47 +131,4 @@ class FirebaseResponse @Inject constructor(
             }
         }
     }
-
-    private fun onRegister(context: Context) {
-        firebase.db.collection("Users").document(mUserID.userid).get().addOnSuccessListener {
-            if (!it.exists()) {
-                firebase.db.collection("Users").document(mUserID.userid).set(
-                    hashMapOf(
-                        "UserID" to mUserID.userid, "Password" to mUserID.password, "ID" to deviceID
-                    )
-                ).addOnSuccessListener {
-                    mStorage.svUser(mUserID.userid, mUserID.password, null)
-                    onRegisterID(context)
-                }
-            } else {
-                mToast(context, 0, "UserID already existing")
-            }
-        }
-    }
-
-    private fun onRegisterID(context: Context) {
-        val AndroidID = Secure.getString(context.contentResolver, Secure.ANDROID_ID)
-        firebase.db.collection("ID").document(AndroidID).set(
-            hashMapOf(
-                "AndroidID" to AndroidID,
-                "DevideID" to deviceID,
-                "UserID" to mUserID.userid,
-                "Password" to mUserID.password
-            )
-        ).addOnSuccessListener {
-            mToast(context, 0, "Successfully Registered")
-        }
-    }
-
-    private fun onCheckAndroidID(context: Context, check: (Boolean) -> (Unit)) {
-        val AndroidID = Secure.getString(context.contentResolver, Secure.ANDROID_ID)
-        firebase.db.collection("ID").document(AndroidID).get().addOnSuccessListener {
-            if (!it.exists()) {
-                check(true)
-            } else {
-                check(false)
-            }
-        }
-    }
-
 }

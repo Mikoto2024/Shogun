@@ -35,6 +35,5 @@ class Views {
             Button.setOnClickListener(onClick)
             return Button
         }
-
     }
 }

@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.lolideveloper.shogun.Ui.ViewModel.Fragment.UserInfViewModel
 import com.lolideveloper.shogun.databinding.UsrinfBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlin.coroutines.coroutineContext
 
 @AndroidEntryPoint
 class UsrInf : Fragment() {
@@ -37,17 +40,9 @@ class UsrInf : Fragment() {
     }
 
     private fun initListeners() {
-        viewModel.onResponse().initLoadData(requireActivity(), binding.i1, binding.i2, binding.i3)
-        binding.getcode.doAfterTextChanged{ viewModel.getCharSequence(it.toString())}
-        binding.btncd.setOnClickListener {
-            viewModel.onResponse().redeemCode(requireActivity(), binding.getcode.text.toString())
-        }
+            viewModel.onResponse.initLoadData(requireActivity(), binding.i1, binding.i2, binding.i3)
     }
 
     private fun initObservers() {
-        binding.btncd.isEnabled = viewModel.checkButtonState()
-        viewModel.code.observe(viewLifecycleOwner) {
-            binding.btncd.isEnabled = viewModel.checkButtonState()
-        }
     }
 }

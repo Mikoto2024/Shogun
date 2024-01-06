@@ -5,28 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/btnrg"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:shadowColor="@color/Blue2"
-            android:text="@string/you_do_not_have_an_account_yet_create_one_here"
-            android:textColor="@color/white" />
-    </FrameLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputLayout"
+        style="@style/CustomInputLayout"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
         app:boxBackgroundColor="#4D000000"
@@ -39,8 +20,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"
-        style="@style/CustomInputLayout">
+        app:layout_constraintVertical_bias="0.203">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtUserID"
@@ -104,13 +84,11 @@
     <FrameLayout
         android:id="@+id/inf"
         android:layout_width="match_parent"
-        android:layout_height="34dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="38dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lg"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="match_parent"
@@ -119,5 +97,19 @@
             android:shadowColor="@color/Blue2"
             android:text="@string/information"
             android:textColor="@color/white" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="🗿 Compatible with Android 7 - 14 🗿" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -72,7 +72,7 @@ class z1 : AppCompatActivity() {
     }
 
     private fun fMyVideoView() {
-        fxVideoView(this, 1.21f, binding.f0) //  1.36
+        fxVideoView(this, 1.34f, binding.f0) //  1.36
         mVideoView(binding.f0, packageName, R.raw.f0)
     }
 

@@ -22,6 +22,7 @@ import com.lolideveloper.shogun.Ui.View.Menu.Svip.Fg3_svp
 import com.lolideveloper.shogun.Ui.View.Menu.Svip.Fg4_svp
 import com.lolideveloper.shogun.Ui.ViewModel.Menu.Svip.FG1ViewModel
 import com.lolideveloper.shogun.Ui.ViewModel.Menu.Svip.FG2ViewModel
+import com.lolideveloper.shogun.Ui.ViewModel.Menu.Svip.FG4ViewModel
 import com.lolideveloper.shogun.Utils.Util.Companion.mWindowParams
 import com.lolideveloper.shogun.View.White
 import com.lolideveloper.shogun.databinding.SpBinding
@@ -154,7 +155,7 @@ class fltsp : Service() {
             Fg1_svp(this, FG1ViewModel()),
             Fg2_svp(this, FG2ViewModel()),
             Fg3_svp(this),
-            Fg4_svp(this)
+            Fg4_svp(this, FG4ViewModel())
         )
         val Tab = binding.Tab
         val adapter = MenuPagerAdapter(list)

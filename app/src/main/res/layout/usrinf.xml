@@ -53,27 +53,6 @@
             android:text="Account status :"
             tools:ignore="TextSizeCheck" />
 
-        <EditText
-            android:id="@+id/getcode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#000000"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Enter the code to redeem"
-            android:imeOptions="flagNoFullscreen"
-            android:inputType="text"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#B3FFFFFF"
-            android:maxLength="15"/>
-
-        <Button
-            android:id="@+id/btncd"
-            android:layout_width="138dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:text="Redeem" />
     </LinearLayout>
 
 </LinearLayout>

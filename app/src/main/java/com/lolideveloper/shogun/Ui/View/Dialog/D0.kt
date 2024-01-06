@@ -51,7 +51,7 @@ class D0 @Inject constructor(
     private fun initListeners() {
         binding.mtrue.setOnClickListener { initCheckPermission() }
         binding.mfalse.setOnClickListener { exitProcess(-1) }
-        binding.TC.setText("1- We are not responsible for any data loss you may have if you attempt to reverse engineer")
+        binding.TC.setText("1- We are not responsible for any data loss you may have if you attempt to reverse engineer \n2- I don't like homosexuals - Not homosexual")
     }
 
     private fun initCheckPermission() {

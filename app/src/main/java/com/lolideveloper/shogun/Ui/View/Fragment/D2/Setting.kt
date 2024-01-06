@@ -1,6 +1,5 @@
 package com.lolideveloper.shogun.Ui.View.Fragment.D2
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +7,13 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.lolideveloper.shogun.R
 import com.lolideveloper.shogun.Utils.Storage
 import com.lolideveloper.shogun.databinding.SettingsBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class Setting : Fragment() {
     private var _binding: SettingsBinding? = null
@@ -27,31 +30,29 @@ class Setting : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val context = binding.root.context
-        mSettings(context)
+        mSettings()
     }
 
-    private fun mSettings(context: Context) {
-        val mStorage = Storage(context)
+    private fun mSettings() {
+        val mStorage = Storage(requireActivity())
         val mMenu = resources.getStringArray(R.array.Menu)
         val mlist = resources.getStringArray(R.array.language)
-
         val adapter = ArrayAdapter(
-            context,
+            requireActivity(),
             com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
             mlist
         )
         val adapter2 = ArrayAdapter(
-            context,
+            requireActivity(),
             com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
             mMenu
         )
-        binding.language.setAdapter(adapter)
-        binding.menu.setAdapter(adapter2)
-
-        binding.menu.setText(mStorage.getSate(1), false)
-        binding.language.setText(mStorage.getSate(2), false)
-
+        lifecycleScope.launch(Dispatchers.Main) {
+            binding.language.setAdapter(adapter)
+            binding.menu.setAdapter(adapter2)
+                binding.menu.setText(mStorage.getSate(1), false)
+                binding.language.setText(mStorage.getSate(2), false)
+        }
         binding.menu.onItemClickListener =
             AdapterView.OnItemClickListener { p0, view, p2, p3 ->
                 if (p2.equals(0)) {
